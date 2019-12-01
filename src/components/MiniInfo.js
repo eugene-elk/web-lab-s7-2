@@ -5,12 +5,18 @@ class MiniInfo extends Component {
         cats: 10
     };
 
-    
+    increaseCats(sobytie) {
+        this.setState({
+            cats: this.state.cats + 1
+    });
+    };
 
     render() {
         return (
             <div>
                 cats: {this.state.cats}
+                <br/>
+                <button onClick={() => this.increaseCats()}> Increase Cats</button>
             </div>
         )
     }
