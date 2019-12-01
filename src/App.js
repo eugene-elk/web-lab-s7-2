@@ -1,11 +1,10 @@
 import React from 'react';
+import MiniInfo from './components/MiniInfo'
 
 function App() {
   return (
     <div className="App">
-      <p>
-        FLEXBOX
-      </p>
+        <MiniInfo />
     </div>
   );
 }
