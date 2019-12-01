@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
 
 class MiniInfo extends Component {
+    state = {
+        cats: 10
+    };
+
+    
+
     render() {
         return (
             <div>
-                catss
+                cats: {this.state.cats}
             </div>
         )
     }
