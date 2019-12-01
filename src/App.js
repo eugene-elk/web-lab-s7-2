@@ -4,7 +4,7 @@ import MiniInfo from './components/MiniInfo'
 function App() {
   return (
     <div className="App">
-        <MiniInfo />
+        <MiniInfo AnimalName = "Dogs" />
     </div>
   );
 }
