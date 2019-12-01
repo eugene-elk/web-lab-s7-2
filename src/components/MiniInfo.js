@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-function MiniInfo(){
-    return (
-        <div>
-            Flex 2.0
-        </div>
-    )
+class MiniInfo extends Component {
+    render() {
+        return (
+            <div>
+                catss
+            </div>
+        )
+    }
+
 }
 
 export default MiniInfo
