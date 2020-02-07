@@ -7,8 +7,11 @@ class MiniInfo extends Component {
         text: ""
     };
 
-    componentDidMount() {
-        fetch("http://fizmatspb.ru/itmoweb/lab3/requester.php")
+    updateText() {
+        let date = new Date();
+        date = date.getTime();
+        this.setState({isLoaded: false});
+        fetch(`http://fizmatspb.ru/itmoweb/lab3/requester.php?v=${date}`)
             .then((response) => {
                 return response.text()
             })
@@ -25,6 +28,10 @@ class MiniInfo extends Component {
             })
     }
 
+    componentDidMount() {
+        this.updateText();
+    }
+
     increaseCats(sobytie) {
         this.setState({
             cats: this.state.cats + 1
@@ -39,6 +46,8 @@ class MiniInfo extends Component {
                 <button onClick={() => this.increaseCats()}> Increase Cats</button>
                 <br/>
                 {!this.state.isLoaded ? "text is now loading" : this.state.text}
+                <br/>
+                <button onClick={() => this.updateText()}>  Update Text</button>
             </div>
         )
     }
