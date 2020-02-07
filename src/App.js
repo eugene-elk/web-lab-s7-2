@@ -1,6 +1,11 @@
 import React from 'react';
-import MiniInfo from './components/MiniInfo'
 import BigInfo from './components/BigInfo'
+import FavoriteCityPack from './components/FavoriteCityPack'
+import configureStore from './store/configureStore';
+import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/integration/react'
+
+const {store, persistor} = configureStore();
 
 function App() {
   return (
@@ -9,6 +14,11 @@ function App() {
             <h1>Погода сейчас</h1>
         </div>
         <BigInfo />
+        <Provider store={store}>
+            <PersistGate loading={null} persistor={persistor}>
+                <FavoriteCityPack/>
+            </PersistGate>
+        </Provider>
     </div>
   );
 }
