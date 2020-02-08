@@ -4,7 +4,7 @@ import {doDeleteItem, itemsFetchData} from "../actions/items";
 import {connect} from "react-redux";
 
 
-export class MiniCityInfo extends Component {
+export class SmallInfo extends Component {
 
     componentDidMount() {
         this.props.fetchData(this.props.serverInfo.city);
@@ -68,4 +68,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MiniCityInfo);
+export default connect(mapStateToProps, mapDispatchToProps)(SmallInfo);
