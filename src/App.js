@@ -4,14 +4,17 @@ import FavoriteCityPack from './components/FavoriteCityPack'
 import configureStore from './store/configureStore';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react'
+import 'bootstrap/dist/css/bootstrap.css'
 
 const {store, persistor} = configureStore();
 
 function App() {
   return (
     <div>
-        <div class="header">
-            <h1>Погода сейчас</h1>
+        <div className="container">
+            <div className="jumbotron">
+                <h1 className="display-2">Погода сейчас</h1>
+            </div>
         </div>
         <BigInfo />
         <Provider store={store}>
